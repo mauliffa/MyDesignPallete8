@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pink1"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="120dp"
+        android:text="Cold &amp; \nCreamy"
+        android:textSize="64sp"
+        android:textColor="#33FFFFFF"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/rounded_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/rounded_corner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"/>
+
+    <ImageView
+        android:id="@+id/iv_item"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="-80dp"
+        android:src="@drawable/ic_item"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rounded_bg"/>
+
+    <TextView
+        android:id="@+id/tv_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="Strawberry Shake"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_item"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-30dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_item_rating"
+        app:layout_constraintBottom_toBottomOf="@id/tv_item_rating"
+
+        android:numStars="5"
+        android:rating="4"
+        android:stepSize="1"
+        android:progressBackgroundTint="@android:color/darker_gray"
+        android:progressTint="@android:color/holo_orange_dark"
+        android:scaleX="0.4"
+        android:scaleY="0.4" />
+
+    <TextView
+        android:id="@+id/tv_item_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-60dp"
+        android:layout_marginTop="8dp"
+        android:text="4.8"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/ratingBar"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_name"/>
+
+    <ImageButton
+        android:id="@+id/btn_fav"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/circle"
+        android:padding="12dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_favorite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_item_name"
+        app:layout_constraintBottom_toBottomOf="@id/tv_item_rating"/>
+
+    <ImageButton
+        android:id="@+id/btn_minus"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_minus"
+        android:scaleType="fitXY"
+        android:background="@drawable/rounded_square"
+        app:layout_constraintStart_toStartOf="@id/tv_item_name"
+        app:layout_constraintTop_toBottomOf="@id/ratingBar"/>
+
+    <TextView
+        android:id="@+id/tv_item_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="1"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/btn_minus"
+        app:layout_constraintTop_toTopOf="@id/btn_minus"
+        app:layout_constraintBottom_toBottomOf="@id/btn_minus"/>
+
+    <ImageButton
+        android:id="@+id/btn_plus"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_plus"
+        android:scaleType="fitXY"
+        android:background="@drawable/rounded_square"
+        app:layout_constraintStart_toEndOf="@id/tv_item_quantity"
+        app:layout_constraintTop_toBottomOf="@id/ratingBar"/>
+
+    <TextView
+        android:id="@+id/tv_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="$11"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/btn_fav"
+        app:layout_constraintTop_toTopOf="@id/btn_minus"
+        app:layout_constraintBottom_toBottomOf="@id/btn_minus"/>
+
+    <TextView
+        android:id="@+id/tv_item_detail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginEnd="40dp"
+        android:text="Cold, creamy, so thick that your straw stands straight up, and filled with juicy berries."
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toStartOf="@id/tv_item_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_minus"
+        app:layout_constraintBottom_toTopOf="@id/btn_back"/>
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="35dp"
+        android:padding="14dp"
+        android:src="@drawable/ic_back"
+        android:scaleType="fitXY"
+        android:background="@drawable/circle2"
+        app:layout_constraintStart_toStartOf="@id/tv_item_name"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_order"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="40dp"
+        android:text="Order Now"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintStart_toEndOf="@id/btn_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_back"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
